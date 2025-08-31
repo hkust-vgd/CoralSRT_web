@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+    <head>
+        <meta charset="UTF-8" />
+        <title>CoralSCOP</title>
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- jQuery (consider updating to latest v3.x if possible) -->
+        <script src="./js/jquery-1.12.4.min.js"></script>
+
+        <!-- FONT -->
+        <link href="./css/css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="./css/font-awesome.min.css" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/skeleton.css" />
+        <link rel="stylesheet" href="./css/footable.standalone.min.css" />
+        <link rel="stylesheet" href="./css/fontawesome.all.min.css" />
+        <link rel="stylesheet" href="./css/bulma.min.css" />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="https://CoralSCOP.hkustvgd.com/images/favicon.png"
+        />
+
+        <!-- JS Libraries -->
+        <script defer src="./js/fontawesome.all.min.js"></script>
+        <script src="./js/bulma-carousel.min.js"></script>
+        <script src="./js/bulma-slider.min.js"></script>
+
+        <!-- Google Analytics -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i["GoogleAnalyticsObject"] = r;
+                (i[r] =
+                    i[r] ||
+                    function () {
+                        (i[r].q = i[r].q || []).push(arguments);
+                    }),
+                    (i[r].l = 1 * new Date());
+                (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m);
+            })(
+                window,
+                document,
+                "script",
+                "https://www.google-analytics.com/analytics.js",
+                "ga"
+            );
+
+            ga("create", "UA-86869673-1", "auto");
+            ga("send", "pageview");
+        </script>
+
+        <style>
+            body {
+                margin: 0;
+                display: flex;
+                justify-content: center; /* horizontal center */
+                align-items: center; /* vertical center */
+                flex-direction: column; /* stack children vertically */
+            }
+            img {
+                display: block;
+            }
+            .column-50 {
+                float: left;
+                width: 50%;
+            }
+            .row-50:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            .floating-teaser {
+                float: left;
+                width: 30%;
+                text-align: center;
+                padding: 15px;
+            }
+            .venue strong {
+                color: #99324b;
+            }
+            .benchmark {
+                width: 100%;
+                max-width: 960px;
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+            .bottom-outer {
+                color: #888;
+                text-align: center;
+                padding: 10px;
+                padding-top: 40px;
+                background-color: #fff;
+                font-size: 14px;
+                opacity: 0.85;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h4 style="text-align: center; margin-top: 30px">
+                CoralSRT: Revisiting Coral Reef Semantic Segmentation by Feature
+                Rectification via Self-supervised Guidance
+            </h4>
+
+            <p
+                style="
+                    text-align: center;
+                    margin-bottom: 12px;
+                    display: flex;
+                    justify-content: center;
+                    gap: 30px;
+                    flex-wrap: wrap;
+                "
+            >
+                <span
+                    ><a
+                        class="simple"
+                        style="text-decoration: none"
+                        href="https://zhengziqiang.github.io/"
+                        >Ziqiang Zheng</a
+                    ><sup>1</sup></span
+                >
+
+                <span
+                    ><a class="simple" style="text-decoration: none"
+                        >Yuk-Kwan Wong</a
+                    ><sup>1</sup></span
+                >
+
+                <span
+                    ><a
+                        class="simple"
+                        style="text-decoration: none"
+                        href="https://sonhua.github.io/"
+                        >Binh-Son Hua</a
+                    ><sup>2</sup></span
+                >
+
+                <span
+                    ><a class="simple" style="text-decoration: none"
+                        >Jianbo Shi</a
+                    ><sup>3</sup></span
+                >
+
+                <span
+                    ><a
+                        class="simple"
+                        style="text-decoration: none"
+                        href="https://scholar.google.com/citations?user=16iMMwwAAAAJ"
+                        >Sai-Kit Yeung</a
+                    ><sup>1</sup></span
+                >
+            </p>
+
+            <p style="text-align: center; margin-bottom: 20px">
+                <sup>1</sup>The Hong Kong University of Science and Technology
+                <span style="display: inline-block; width: 32px"></span>
+                <sup>2</sup>Trinity College Dublin
+                <span style="display: inline-block; width: 32px"></span>
+                <sup>3</sup>Shenzhen University
+            </p>
+
+            <p style="text-align: center; margin-bottom: 20px">
+                International Conference on Computer Vision, ICCV 2025
+            </p>
+
+            <div class="publication-links" style="text-align: center">
+                <span class="link-block">
+                    <a
+                        class="external-link button is-normal is-rounded is-dark"
+                        style="font-size: 15px"
+                    >
+                        <span class="icon"
+                            ><i class="fas fa-file-pdf"></i
+                        ></span>
+                        <span>Paper</span>
+                    </a>
+
+                    <a
+                        class="external-link button is-normal is-rounded is-dark"
+                        style="font-size: 15px"
+                    >
+                        <span class="icon"
+                            ><i class="fas fa-file-pdf"></i
+                        ></span>
+                        <span>Supplementary</span>
+                    </a>
+
+                    <a
+                        class="external-link button is-normal is-rounded is-dark"
+                        style="font-size: 15px"
+                    >
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                        <span>Code</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <div
+            style="
+                text-align: center;
+                max-width: 70%;
+                margin: auto;
+                margin-top: 1%;
+            "
+        >
+            <figure style="text-align: center; max-width: 100%; margin: auto">
+                <img
+                    src="./images/teaser.jpg"
+                    alt="CoralSCOP teaser image"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: auto;
+                    "
+                />
+                <figcaption
+                    style="
+                        width: 100%;
+                        margin: auto;
+                        font-size: 0.95em;
+                        line-height: 1.5;
+                        text-align: justify;
+                    "
+                >
+                    <span style="font-style: italic; color: #444"
+                        >Fig.&nbsp;1</span
+                    >
+                    Corals can grow in diverse shapes, textures, and regions,
+                    thus leading to high physical and appearance stochasticity.
+                    It is challenging to acquire visually consistent knowledge
+                    for segmenting corals, in contrast to segmenting objects
+                    (<em>e.g.</em>, fish). We measure the feature distribution
+                    of 400 masked fish and coral images extracted from
+                    foundation models (FMs), and found that the average pairwise
+                    distance among coral samples is higher than that of fish. We
+                    propose <strong>CoralSRT</strong>, an add-on self-supervised
+                    feature rectification module, to reduce the stochasticity of
+                    coral features. Our method requires no human annotations,
+                    retraining/fine-tuning FMs, or even domain-specific data.
+                    The key insight is to incorporate <em>self-repeated</em>,
+                    <em>asymmetric</em>, and <em>amorphous</em> properties of
+                    corals to strengthen within-segment affinity, leading to
+                    more efficient label propagation in feature space and
+                    producing significant semantic segmentation performance
+                    gains.
+                </figcaption>
+            </figure>
+        </div>
+
+        <div id="teaser" style="width: 70%; margin: 0 auto; margin-top: 1%">
+            <h5 style="margin: 0 0 0.5rem 0">Abstract</h5>
+            <p
+                style="
+                    text-align: justify;
+                    line-height: 1.6;
+                    color: #222;
+                    margin: 0;
+                "
+            >
+                We investigate coral reef semantic segmentation, in which
+                multifaceted factors, like genes, environmental changes, and
+                internal interactions, can lead to highly unpredictable growth
+                patterns. Existing segmentation approaches in both computer
+                vision and coral reef communities have failed to incorporate the
+                intrinsic properties of corals, specifically their
+                self-repeated, asymmetric, and amorphous distribution of
+                elements, into model design. We propose
+                <strong style="font-weight: bold">CoralSRT</strong>, a feature
+                rectification module via self-supervised guidance, to reduce the
+                stochasticity of coral features extracted by pretrained
+                foundation models (FMs), as demonstrated in
+                <span style="font-style: italic; color: #444">Fig.&nbsp;1</span
+                >. Our insight is that while different corals are highly
+                dissimilar, individual corals within the same growth exhibit
+                strong self-affinity. Using a superset of features from FMs
+                learned by various pretext tasks, we extract a pattern related
+                to the intrinsic properties of each coral to strengthen
+                within-segment affinity, aligning with centrality. We
+                investigate features from FMs that were optimized by various
+                pretext tasks on significantly large-scale unlabeled or labeled
+                data, which already contain rich information for modeling both
+                within-segment and cross-segment affinities, enabling the
+                adaptation of FMs for coral segmentation. CoralSRT can rectify
+                features from FMs to more efficient features for label
+                propagation and lead to further significant semantic
+                segmentation performance gains, all without requiring additional
+                human supervision, retraining/finetuning FMs or even
+                domain-specific data. These advantages help reduce human effort
+                and the need for domain expertise in data collection and
+                labeling. Our method is easy to implement, and also task- and
+                model-agnostic. CoralSRT bridges the self-supervised
+                pre-training and supervised training in the feature space, also
+                offering insights for segmenting elements/stuffs (<em
+                    style="font-style: italic"
+                    >e.g.</em
+                >, grass, plants, cells, and biofoulings).
+            </p>
+        </div>
+
+        <div id="teaser" style="width: 70%; margin: 0 auto; margin-top: 1%">
+            <h5>Framework Overview</h5>
+            <div>
+                <img src="images/method.png" style="width: 100%" />
+            </div>
+            <div class="caption">
+                <p style="text-align: justify">
+                    <span style="font-style: italic; color: #444"
+                        >Fig.&nbsp;2</span
+                    >
+                    Framework overview of proposed <strong>CoralSRT</strong> to
+                    rectify features of frozen FMs based on model-generated mask
+                    guidance or human annotations. We force features within each
+                    semantic-agnostic segment to approach its centrality to
+                    reduce the stochasticity of coral features, leading to more
+                    efficient features for label propagation in the feature
+                    space. On the right-hand side, we demonstrate \(
+                    \texttt{Rec}(\cdot) \) is learning high-dimensional features
+                    inside the segment via the centrality (<em>e.g.</em>, median
+                    value), which is stable between different inferior segments
+                    due to the intrinsic self-repeated and amorphous properties
+                    of corals.
+                </p>
+            </div>
+        </div>
+
+        <div class="bottom-outer">
+            &copy; 2025 Ziqiang Zheng, Yuk-Kwan Wong, Binh-Son Hua, Jianbo Shi,
+            Sai-Kit Yeung. All rights reserved.
+        </div>
+    </body>
+</html>
