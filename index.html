@@ -7,33 +7,26 @@
         <meta name="author" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- jQuery (consider updating to latest v3.x if possible) -->
         <script src="./js/jquery-1.12.4.min.js"></script>
 
-        <!-- FONT -->
         <link href="./css/css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="./css/font-awesome.min.css" />
-
-        <!-- CSS -->
         <link rel="stylesheet" href="./css/normalize.css" />
         <link rel="stylesheet" href="./css/skeleton.css" />
         <link rel="stylesheet" href="./css/footable.standalone.min.css" />
         <link rel="stylesheet" href="./css/fontawesome.all.min.css" />
         <link rel="stylesheet" href="./css/bulma.min.css" />
 
-        <!-- Favicon -->
         <link
             rel="icon"
             type="image/png"
             href="https://CoralSCOP.hkustvgd.com/images/favicon.png"
         />
 
-        <!-- JS Libraries -->
         <script defer src="./js/fontawesome.all.min.js"></script>
         <script src="./js/bulma-carousel.min.js"></script>
         <script src="./js/bulma-slider.min.js"></script>
 
-        <!-- Google Analytics -->
         <script>
             (function (i, s, o, g, r, a, m) {
                 i["GoogleAnalyticsObject"] = r;
@@ -54,7 +47,6 @@
                 "https://www.google-analytics.com/analytics.js",
                 "ga"
             );
-
             ga("create", "UA-86869673-1", "auto");
             ga("send", "pageview");
         </script>
@@ -63,9 +55,9 @@
             body {
                 margin: 0;
                 display: flex;
-                justify-content: center; /* horizontal center */
-                align-items: center; /* vertical center */
-                flex-direction: column; /* stack children vertically */
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
             }
             img {
                 display: block;
@@ -103,6 +95,15 @@
                 font-size: 14px;
                 opacity: 0.85;
             }
+            ul.custom-list {
+                list-style-type: disc;
+                padding-left: 20px;
+                line-height: 1.6;
+                color: #222;
+            }
+            li {
+                margin-bottom: 6px;
+            }
         </style>
     </head>
     <body>
@@ -130,13 +131,11 @@
                         >Ziqiang Zheng</a
                     ><sup>1</sup></span
                 >
-
                 <span
                     ><a class="simple" style="text-decoration: none"
                         >Yuk-Kwan Wong</a
                     ><sup>1</sup></span
                 >
-
                 <span
                     ><a
                         class="simple"
@@ -145,7 +144,6 @@
                         >Binh-Son Hua</a
                     ><sup>2</sup></span
                 >
-
                 <span
                     ><a
                         class="simple"
@@ -154,7 +152,6 @@
                         >Jianbo Shi</a
                     ><sup>3</sup></span
                 >
-
                 <span
                     ><a
                         class="simple"
@@ -189,17 +186,16 @@
                         ></span>
                         <span>Paper</span>
                     </a>
-
                     <a
                         class="external-link button is-normal is-rounded is-dark"
                         style="font-size: 15px"
+                        href="papers/CoralSRT_supp.pdf"
                     >
                         <span class="icon"
                             ><i class="fas fa-file-pdf"></i
                         ></span>
-                        <span>Supplementary (Coming Soon)</span>
+                        <span>Supplementary</span>
                     </a>
-
                     <a
                         class="external-link button is-normal is-rounded is-dark"
                         style="font-size: 15px"
@@ -250,16 +246,11 @@
                     of 400 masked fish and coral images extracted from
                     foundation models (FMs), and found that the average pairwise
                     distance among coral samples is higher than that of fish. We
-                    propose <strong>CoralSRT</strong>, an add-on self-supervised
-                    feature rectification module, to reduce the stochasticity of
-                    coral features. Our method requires no human annotations,
+                    propose
+                    <strong>CoralSRT</strong>, an add-on self-supervised feature
+                    rectification module, to reduce the stochasticity of coral
+                    features. Our method requires no human annotations,
                     retraining/fine-tuning FMs, or even domain-specific data.
-                    The key insight is to incorporate <em>self-repeated</em>,
-                    <em>asymmetric</em>, and <em>amorphous</em> properties of
-                    corals to strengthen within-segment affinity, leading to
-                    more efficient label propagation in feature space and
-                    producing significant semantic segmentation performance
-                    gains.
                 </figcaption>
             </figure>
         </div>
@@ -314,6 +305,57 @@
             </p>
         </div>
 
+        <!-- ✅ Added Key Contributions Section -->
+        <div style="width: 70%; margin: 0 auto; margin-top: 1%">
+            <h5>Key Contributions</h5>
+            <ul class="custom-list">
+                <li>
+                    We propose <strong>CoralSRT</strong>, revisiting coral
+                    segmentation from intrinsic properties of Corals.
+                </li>
+                <li>
+                    Demonstrated efficiency regarding data, model and
+                    optimization.
+                </li>
+                <li>
+                    Offered a model-agnostic design that supports popular
+                    foundation models such as <code>DINO</code>,
+                    <code>DINOv2</code>, <code>DINOv3</code>, <code>iBoT</code>,
+                    <code>SAM</code>, <code>SAM2</code>, and
+                    <code>CoralSCOP</code>.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ✅ Added Insights Section -->
+        <div style="width: 70%; margin: 0 auto; margin-top: 1%">
+            <h5>Insights</h5>
+            <ul class="custom-list">
+                <li>
+                    <strong>Self-affinity:</strong> while different corals are
+                    highly dissimilar, individual corals within the same growth
+                    exhibit strong self-affinity.
+                </li>
+                <li>
+                    <strong>Intrinsic properties incorporated:</strong> we
+                    extract a pattern related to the intrinsic properties of
+                    each coral to strengthen within-segment affinity, aligning
+                    with centrality
+                </li>
+                <li>
+                    <strong>Why not promptable segmentation:</strong> we have
+                    comprehensively dissected why promptable segmentation, such
+                    as SAM, is less effective for coral segmentation (especially
+                    sparse-to-dense).
+                </li>
+                <li>
+                    <strong>Optimization-friendly:</strong> without requiring
+                    additional human supervision, retraining/finetuning FMs or
+                    even domain-specific data.
+                </li>
+            </ul>
+        </div>
+
         <div id="teaser" style="width: 70%; margin: 0 auto; margin-top: 1%">
             <h5>Framework Overview</h5>
             <div>
@@ -330,8 +372,8 @@
                     semantic-agnostic segment to approach its centrality to
                     reduce the stochasticity of coral features, leading to more
                     efficient features for label propagation in the feature
-                    space. On the right-hand side, we demonstrate \(
-                    \texttt{Rec}(\cdot) \) is learning high-dimensional features
+                    space. On the right-hand side, we demonstrate
+                    <code>Rec(·)</code> is learning high-dimensional features
                     inside the segment via the centrality (<em>e.g.</em>, median
                     value), which is stable between different inferior segments
                     due to the intrinsic self-repeated and amorphous properties
@@ -340,54 +382,263 @@
             </div>
         </div>
 
-        <div id="teaser" style="width: 70%; margin: 0 auto; margin-top: 1%">
-            <h5>Qualitative Results</h5>
-            <div>
+        <div id="motivation" style="width: 70%; margin: 0 auto; margin-top: 1%">
+            <h5>Motivation and Reformulation</h5>
+            <p style="text-align: justify; line-height: 1.6; color: #222">
+                The coral reef semantic segmentation could be categorized as
+                <strong>stuff segmentation</strong>. COCO-Stuff (Caesar
+                <em>et al.</em>, 2018) conducted the first attempt to do stuff
+                segmentation and summarized five key properties between
+                “instances/things” and “stuffs”: <em>shape</em>, <em>size</em>,
+                <em>parts</em>, <em>instances</em>, and <em>texture</em>.
+                Inspired by this work, we have also summarized the challenges of
+                conducting coral segmentation:
+            </p>
+
+            <ul class="custom-list">
+                <li>
+                    <strong>Amorphous distribution</strong> leading to irregular
+                    boundaries. Corals often feature non-uniform, encrusting, or
+                    intricate growth patterns that defy simple geometric
+                    descriptions, such as irregular edges.
+                </li>
+                <li>
+                    <strong>Repeatability or Fractality:</strong> The structure
+                    of corals exhibits a self-similar, fractal-like nature,
+                    where patterns or arrangements recur at varying scales.
+                </li>
+                <li>
+                    <strong>Diversity.</strong> Corals or coral reefs consist of
+                    a wide variety of components, contributing to their complex
+                    appearance.
+                </li>
+                <li>
+                    <strong>Self-occlusion:</strong> Due to clustering or
+                    overlapping elements, parts of the structure obscure others,
+                    complicating visual interpretation.
+                </li>
+                <li>
+                    <strong>Asymmetry.</strong> The whole reef structure is
+                    usually asymmetric, with amorphous shapes.
+                </li>
+            </ul>
+        </div>
+
+        <!-- ✅ Failure of Promptable Segmentation -->
+        <div id="failure" style="width: 70%; margin: 0 auto; margin-top: 1%">
+            <h5>Failure of Promptable Segmentation</h5>
+            <div style="text-align: center">
                 <img
-                    src="images/comparison.jpg"
-                    style="width: 80%; display: block; margin: 0 auto"
+                    src="images/failure.jpg"
+                    style="
+                        width: 80%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    "
                 />
-            </div>
-            <div class="caption">
-                <p style="text-align: center">
-                    <span style="font-style: italic; color: #444"
-                        >Fig.&nbsp;3</span
+                <div class="caption">
+                    <p
+                        style="
+                            text-align: justify;
+                            line-height: 1.6;
+                            color: #222;
+                        "
                     >
-                    The sparse-to-dense conversion results of various algorithms
-                    using 100 randomly sampled labeled sparse points.
-                </p>
+                        Promptable segmentation models (<em>e.g.</em>, SAM and
+                        CoralSCOP) lead to
+                        <em>under-inclusive</em> and
+                        <em>over-inclusive</em> outputs. The mask with
+                        <span style="color: red">red</span> edge is for
+                        illustration, not model-generated.
+                    </p>
+                </div>
             </div>
-            <div>
+        </div>
+
+        <!-- ✅ Key Differences Between Instances and Stuff -->
+        <div
+            id="instances-vs-stuff"
+            style="width: 70%; margin: 0 auto; margin-top: 1%"
+        >
+            <h5>Key Differences Between Instances and Stuff</h5>
+            <div style="text-align: center">
+                <img
+                    src="images/structure.jpg"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    "
+                />
+                <div class="caption">
+                    <p
+                        style="
+                            text-align: justify;
+                            line-height: 1.6;
+                            color: #222;
+                        "
+                    >
+                        The key difference between segmenting the fish and the
+                        corals: the fish has a
+                        <code>visually consistent structural unit</code> while
+                        the corals do not have. No matter which part of the fish
+                        is occluded, we humans can almost imagine its boundary
+                        and shape. But for corals, we cannot imagine a
+                        consistent output from two occluded inputs with
+                        different regions occluded.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ Our Formulation -->
+        <div
+            id="formulation"
+            style="width: 70%; margin: 0 auto; margin-top: 1%"
+        >
+            <h5>Our Formulation</h5>
+            <div style="text-align: center">
+                <img
+                    src="images/formulation.jpg"
+                    style="
+                        width: 80%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    "
+                />
+                <div class="caption">
+                    <p
+                        style="
+                            text-align: justify;
+                            line-height: 1.6;
+                            color: #222;
+                        "
+                    >
+                        Our simple and fundamental problem formulation for coral
+                        reef semantic segmentation:
+                        <em>segment</em> as the basis to model within-segment
+                        and cross-segment affinities.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ✅ Results -->
+        <div id="results" style="width: 70%; margin: 0 auto; margin-top: 1%">
+            <h5>Results</h5>
+
+            <!-- PCA Visualization -->
+            <p style="font-weight: bold; margin-top: 10px">PCA visualization</p>
+            <div style="text-align: center">
                 <img
                     src="images/feature_comparison.jpg"
-                    style="width: 80%; display: block; margin: 0 auto"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    "
                 />
-            </div>
-            <div class="caption">
-                <p style="text-align: center">
-                    <span style="font-style: italic; color: #444"
-                        >Fig.&nbsp;4</span
+                <div class="caption">
+                    <p
+                        style="
+                            text-align: justify;
+                            line-height: 1.6;
+                            color: #222;
+                            text-align: center;
+                        "
                     >
-                    PCA (first 3 components) visualization of features. FeatUp,
-                    DVT and CoralSRT are using DINOv2 features.
-                </p>
+                        PCA comparison (first 3 channels) of features from
+                        different algorithms and foundation models.
+                    </p>
+                </div>
             </div>
-            <div>
+
+            <!-- Sparse-to-dense Conversion -->
+            <p style="font-weight: bold; margin-top: 20px">
+                Sparse-to-dense conversion
+            </p>
+            <div style="text-align: center">
                 <img
-                    src="images/human_comparison.jpg"
-                    style="width: 80%; display: block; margin: 0 auto"
+                    src="images/comparison.jpg"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    "
                 />
-            </div>
-            <div class="caption">
-                <p style="text-align: center">
-                    <span style="font-style: italic; color: #444"
-                        >Fig.&nbsp;5</span
+                <div class="caption">
+                    <p
+                        style="
+                            text-align: justify;
+                            line-height: 1.6;
+                            color: #222;
+                            text-align: center;
+                        "
                     >
-                    PCA visualization of original, rectified (median value based
-                    and without training), and CoralSRT features.
-                </p>
+                        Sparse-to-dense conversion based on features from
+                        different algorithms and foundation models.
+                    </p>
+                </div>
             </div>
-            <div class="caption"></div>
+
+            <!-- Zero-shot Ability -->
+            <p style="font-weight: bold; margin-top: 20px">Zero-shot ability</p>
+            <div style="text-align: center">
+                <img
+                    src="images/zero_shot_seaview.jpg"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    "
+                />
+                <div class="caption">
+                    <p
+                        style="
+                            text-align: justify;
+                            line-height: 1.6;
+                            color: #222;
+                            text-align: center;
+                        "
+                    >
+                        Zero-shot sparse-to-dense conversion results on the
+                        Seaview dataset.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Model-agnostic -->
+            <p style="font-weight: bold; margin-top: 20px">Model-agnostic</p>
+            <div style="text-align: center">
+                <img
+                    src="images/model_agnostic.jpg"
+                    style="
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    "
+                />
+                <div class="caption">
+                    <p
+                        style="
+                            text-align: justify;
+                            line-height: 1.6;
+                            color: #222;
+                            text-align: center;
+                        "
+                    >
+                        Our model could promote the features from various
+                        foundation models.
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="bottom-outer">
